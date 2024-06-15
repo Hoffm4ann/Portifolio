@@ -1,0 +1,42 @@
+/* Define margem e preenchimento para zero para evitar espaçamento extra */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estiliza o corpo da página */
+body {
+    /* Flexbox para centralizar elementos na tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Esconde a barra de rolagem */
+    background: black; /* Define o fundo como preto */
+}
+
+/* Estiliza os elementos hr para criar a chuva */
+hr {
+    width: 50px; /* Largura do "raio" da chuva */
+    border-color: transparent; /* Define a cor da borda como transparente */
+    border-right-color: rgba(255, 255, 255, 0.7); /* Define a cor da borda direita com transparência */
+    border-right-width: 50px; /* Largura da borda direita */
+    position: absolute; /* Posiciona os elementos de forma absoluta */
+    bottom: 100%; /* Define a posição inicial dos elementos abaixo da tela */
+    transform-origin: 100% 50%; /* Define o ponto de origem da transformação */
+    animation-name: rain; /* Nome da animação */
+    animation-duration: 1s; /* Duração da animação */
+    animation-timing-function: linear; /* Função de temporização linear */
+    animation-iteration-count: infinite; /* Iteração infinita da animação */
+}
+
+/* Define a animação da chuva */
+@keyframes rain {
+    from {
+        transform: rotate(105deg) translateX(0); /* Define a transformação inicial */
+    }
+    to {
+        transform: rotate(105deg) translateX(calc(100vh + 20px)); /* Define a transformação final */
+    }
+}

@@ -1,0 +1,87 @@
+/* Define as propriedades de margem, preenchimento e box-sizing para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2f363e; /* Cor de fundo do corpo da página */
+}
+
+/* Estilos para o menu */
+.menu {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para os itens do menu */
+.menu li {
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transition: 0.5s; /* Transição suave para as animações */
+    transition-delay: calc(0.1s * var(--i)); /* Atraso na transição para cada item do menu */
+    transform-origin: 140px; /* Define o ponto de origem da transformação */
+    transform: rotate(0deg) translateX(110px); /* Transformação inicial */
+}
+
+/* Estilos para os itens do menu quando o menu está ativo */
+.menu.active li {
+    transform: rotate(calc(360deg/8*var(--i)))translateX(0px); /* Animação dos itens do menu quando o menu está ativo */
+}
+
+/* Estilos para os links nos itens do menu */
+.menu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    color: var(--clr); /* Cor do ícone */
+    border: 2px solid var(--clr); /* Cor da borda */
+    border-radius: 50%; /* Borda circular */
+    text-decoration: none;
+    font-size: 24px; /* Tamanho da fonte */
+    transform: rotate(calc(360deg/-8*var(--i))); /* Rotaciona os ícones */
+}
+
+/* Estilos para os links nos itens do menu quando hover */
+.menu li a:hover {
+    transition: 0s; /* Remove a transição */
+    background: var(--clr); /* Cor de fundo ao passar o mouse */
+    color: #333; /* Cor do texto ao passar o mouse */
+    box-shadow: 0 0 10px var(--clr), 0 0 30px var(--clr), 0 0 50px var(--clr); /* Sombra ao passar o mouse */
+}
+
+/* Estilos para o botão de alternância/toggle */
+.menu .toggle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #2f363e; /* Cor de fundo do botão */
+    border: 2px solid #fff; /* Cor da borda do botão */
+    border-radius: 50%; /* Borda circular */
+    color: #fff; /* Cor do ícone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 32px; /* Tamanho da fonte */
+    transition: transform 1.25s; /* Transição para a animação do botão */
+}
+
+/* Estilos para o botão de alternância/toggle quando o menu está ativo */
+.menu.active .toggle {
+    transform: rotate(315deg); /* Animação do botão quando o menu está ativo */
+}

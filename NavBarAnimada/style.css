@@ -1,0 +1,157 @@
+/* Reset de estilos para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif; /* Definição da família de fontes padrão */
+}
+
+/* Definição de variável global para cor principal */
+:root {
+    --clr: #222337; /* Cor principal */
+}
+
+/* Estilos para o corpo do documento */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altura mínima da tela inteira */
+    background-color: var(--clr); /* Cor de fundo */
+}
+
+/* Estilos para a barra de navegação */
+.navigation {
+    position: relative;
+    width: 500px;
+    height: 70px;
+    background: #fff; /* Cor de fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Borda arredondada */
+}
+
+/* Estilos para a lista de navegação */
+.navigation ul {
+    display: flex;
+    width: 350px;
+}
+
+/* Estilos para cada item da lista de navegação */
+.navigation ul li {
+    position: relative;
+    list-style: none;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+/* Estilos para os links dentro de cada item da lista de navegação */
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Estilos para os ícones dentro dos links */
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 24px;
+    text-align: center;
+    transition: 0.5s; /* Transição suave */
+    color: var(--clr); /* Cor do ícone */
+}
+
+/* Estilos para o ícone do item ativo */
+.navigation ul li.active a .icon {
+    transform: translateY(-32px); /* Movimento para cima */
+}
+
+/* Estilos para o texto dentro dos links */
+.navigation ul li a .text {
+    position: absolute;
+    color: var(--clr); /* Cor do texto */
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    transition: 0.5s; /* Transição suave */
+    opacity: 1;
+    transform: translateY(20px); /* Movimento para baixo */
+}
+
+/* Estilos para o texto do item ativo */
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(10px); /* Movimento para baixo */
+}
+
+/* Estilos para o indicador de seleção */
+.indicator {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: -50%;
+    background: #29fd53; /* Cor do indicador */
+    border-radius: 50%; /* Borda arredondada */
+    border: 6px solid var(--clr); /* Borda */
+    transition: 0.5s; /* Transição suave */
+}
+
+/* Estilos para a seta antes do indicador */
+.indicator::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
+}
+
+/* Estilos para a seta depois do indicador */
+.indicator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: 0px -10px 0 0 var(--clr);
+}
+
+/* Estilos para o indicador do item ativo */
+.navigation ul li:nth-child(1).active~.indicator {
+    transform: translateX(calc(70px*-0.1)); /* Movimento horizontal */
+}
+
+.navigation ul li:nth-child(2).active~.indicator {
+    transform: translateX(calc(70px*0.7)); /* Movimento horizontal */
+}
+
+.navigation ul li:nth-child(3).active~.indicator {
+    transform: translateX(calc(70px*1.6)); /* Movimento horizontal */
+}
+
+.navigation ul li:nth-child(4).active~.indicator {
+    transform: translateX(calc(70px*2.4)); /* Movimento horizontal */
+}
+
+.navigation ul li:nth-child(5).active~.indicator {
+    transform: translateX(calc(70px*3.28)); /* Movimento horizontal */
+}
+
+.navigation ul li:nth-child(6).active~.indicator {
+    transform: translateX(calc(70px*4.1)); /* Movimento horizontal */
+}
