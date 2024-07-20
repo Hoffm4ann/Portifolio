@@ -5,6 +5,7 @@ import Register from "../containers/Register";
 import Home from "../containers/Home";
 import PrivateRoute from "./private-route";
 import Products from "../containers/Products";
+import Cart from "../containers/Cart";
 
 function Routes() {
     return (
@@ -14,6 +15,8 @@ function Routes() {
                 <Route component={Register} path="/cadastro" />
                 <PrivateRoute exact component={Home} path="/" />
                 <PrivateRoute component={Products} path="/produtos" />
+                <PrivateRoute component={Cart} path="/carrinho" />
+
             </Switch>
         </Router>
     );
