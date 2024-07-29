@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
-import ProductsLogo from "../../assets/products-logo.svg";
+import ProductsLogo from "../../assets/products-logo.png";
 import { Container, ProductsImg, CategoryButton, CategoriesMenu, ProductsContainer } from "./styles";
 import api from "../../services/api";
 import CardProduct from "../../components/CardProduct";
 import formatCurrency from "../../utils/formatCurrency";
+import PropTypes from "prop-types"
 
-function Products() {
+function Products({ location: { state } }) {
+
+    let categoryId = 0
+    if (state?.categoryId) {
+        categoryId = state.categoryId
+    }
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-    const [activeCategory, setActiveCategory] = useState(0)
+    const [activeCategory, setActiveCategory] = useState(categoryId)
 
 
     useEffect(() => {
@@ -60,4 +66,8 @@ function Products() {
         </Container>
     )
 }
+Products.propTypes = {
+    location: PropTypes.object
+}
+
 export default Products;

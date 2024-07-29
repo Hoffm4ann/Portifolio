@@ -20,13 +20,13 @@ import {
 function Register() {
 	const schema = Yup.object().shape({
 		name: Yup.string()
-			.required("Nome obrigatorio!"),
+			.required("Nome obrigatório!"),
 		email: Yup.string()
-			.email("Diegite um e-mail válido")
+			.email("Digite um e-mail válido")
 			.required("O e-mail e obrigatório!"),
 		password: Yup.string()
 			.required("A senha e obrigatória!")
-			.min(6, "A senha deve ter no minimo seis dígitos!"),
+			.min(6, "A senha deve ter no mínimo seis dígitos!"),
 		confirmPassword: Yup.string()
 			.required("A senha é obrigatória!")
 			.oneOf([Yup.ref("password")], "As senhas devem ser iguais")

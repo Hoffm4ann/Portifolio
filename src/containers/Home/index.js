@@ -1,5 +1,5 @@
 import React from "react";
-import HomeLogo from "../../assets/home-logo.svg";
+import HomeLogo from "../../assets/home-logo.png";
 import { Container, HomeImg } from "./styles";
 import CategoryCarousel from "../../components/CategoryCarousel";
 import OffersCarousel from "../../components/OffersCarousel";

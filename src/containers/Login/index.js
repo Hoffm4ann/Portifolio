@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import * as Yup from "yup";
 import LoginImg from "../../assets/login-image.svg";
 import Logo from "../../assets/logo.svg";
@@ -25,11 +25,11 @@ function Login() {
 
 	const schema = Yup.object().shape({
 		email: Yup.string()
-			.email("Diegite um e-mail valido")
-			.required("O e-mail e obrigatorio"),
+			.email("Digite um e-mail valido")
+			.required("O e-mail e obrigatório"),
 		password: Yup.string()
-			.required("A senha e obriatoria")
-			.min(6, "A senha deve ter no minimo seis digitos"),
+			.required("A senha e obrigatória")
+			.min(6, "A senha deve ter no mínimo seis dígitos"),
 	});
 
 	const {
@@ -49,13 +49,16 @@ function Login() {
 			{
 				pending: 'Verificando seus dados!',
 				success: 'Seja bem vindo(a)! 👌',
-				error: 'Vefifique seu e-mail e senha! 🤯'
+				error: 'Verifique seu e-mail e senha! 🤯'
 			}
 		)
 		putUserData(data)
 		setTimeout(() => {
-			history.push("/")
-
+			if (data.admin) {
+				history.push("/pedidos")
+			} else {
+				history.push("/")
+			}
 		}, 1000)
 
 	};

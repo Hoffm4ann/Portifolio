@@ -6,6 +6,8 @@ import Home from "../containers/Home";
 import PrivateRoute from "./private-route";
 import Products from "../containers/Products";
 import Cart from "../containers/Cart";
+import Admin from "../containers/Admin";
+import paths from "../constants/paths";
 
 function Routes() {
     return (
@@ -16,7 +18,9 @@ function Routes() {
                 <PrivateRoute exact component={Home} path="/" />
                 <PrivateRoute component={Products} path="/produtos" />
                 <PrivateRoute component={Cart} path="/carrinho" />
-
+                <PrivateRoute component={Admin} path={paths.Order} isAdmin />
+                <PrivateRoute component={Admin} path={paths.Products} isAdmin />
+                <PrivateRoute component={Admin} path={paths.NewProduct} isAdmin />
             </Switch>
         </Router>
     );
