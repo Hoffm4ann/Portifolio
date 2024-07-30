@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import LoginImg from "../../assets/login-image.svg";
 import Logo from "../../assets/logo.svg";
 import api from "../../services/api";
+import ErrorMessage from "../../components/ErrorMessage";
 import Button from "../../components/Button";
 import { useUser } from "../../hooks/UserContext";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -12,7 +13,6 @@ import { useForm } from "react-hook-form";
 import {
 	Container,
 	ContainerItens,
-	ErrorMessage,
 	Input,
 	Label,
 	LoginImage,

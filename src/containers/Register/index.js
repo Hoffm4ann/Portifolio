@@ -7,10 +7,10 @@ import RegisterImg from "../../assets/register-image.svg";
 import Logo from "../../assets/logo.svg";
 import api from "../../services/api";
 import Button from "../../components/Button";
+import ErrorMessage from "../../components/ErrorMessage";
 import {
 	Container,
 	ContainerItens,
-	ErrorMessage,
 	Input,
 	Label,
 	RegisterImage,
